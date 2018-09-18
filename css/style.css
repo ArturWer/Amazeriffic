@@ -1,6 +1,6 @@
 body{
 	background: #f9e933;
-
+	font-family: 'Arsenal', sans-serif;
 }
 header, main, footer{
 	min-width: 855px;
@@ -14,12 +14,7 @@ header{
 	background: white;
 	overflow: auto;
 }
-header h1{
-	
-}
-header nav{
-	
-}
+
 main{
 	background-color: white;
 	overflow: auto;
@@ -28,9 +23,7 @@ header .leftColumn, main .leftColumn, footer .leftColumn{
 	float: left;
 	width: 570px;
 }
-main img{
-	
-}
+
 footer{
 	overflow: auto;
 }
@@ -39,3 +32,6 @@ footer{
 	width: 285px;
 }
 
+h1, h2, h3, h5{
+	font-family: 'Ubuntu', sans-serif;
+}
