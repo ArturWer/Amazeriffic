@@ -2,6 +2,7 @@ body{
 	background: #f9e933;
 	font-family: 'Arsenal', sans-serif;
 	font-size: 100%;
+	line-height: 1.1rem;
 }
 header, main, footer{
 	min-width: 855px;
@@ -14,11 +15,34 @@ header .container, main .container, footer .container{
 header{
 	background: white;
 	overflow: auto;
+	border-bottom: 2px solid gray;
+	height: 69px;
 }
-
+header h1{
+	font-size: 4rem;
+	margin: 20px auto;
+	font-style: italic;
+}
+header nav{
+	margin: 23px auto;
+	font-size: 0.8rem;
+}
 main{
 	background-color: white;
 	overflow: auto;
+	padding-top: 20px; 
+}
+main h2{
+	font-size: 2rem;
+	line-height: 4.8rem;
+}
+main h3{
+	font-size: 1.4rem;
+	line-height: 2.8rem;
+}
+main li{
+	list-style-type: circle;
+	list-style-position: inside;
 }
 header .leftColumn, main .leftColumn, footer .leftColumn{
 	float: left;
@@ -28,15 +52,26 @@ header .leftColumn, main .leftColumn, footer .leftColumn{
 footer{
 	overflow: auto;
 }
+footer h5{
+	margin: 25px auto;
+}
+footer h5+p{
+	font-style: italic;
+}
+footer ul{
+	columns: 2;
+}
 .rightColumn{
 	float: right;
 	width: 285px;
 }
 
 h1, h2, h3, h5{
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Oswald', sans-serif;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+	font-weight: bolder;
 }
 
-h1{
-	font-size: 4rem;
-}
