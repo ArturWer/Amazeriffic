@@ -1,6 +1,7 @@
 body{
 	background: #f9e933;
 	font-family: 'Arsenal', sans-serif;
+	font-size: 100%;
 }
 header, main, footer{
 	min-width: 855px;
@@ -34,4 +35,8 @@ footer{
 
 h1, h2, h3, h5{
 	font-family: 'Ubuntu', sans-serif;
+}
+
+h1{
+	font-size: 4rem;
 }
