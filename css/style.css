@@ -12,7 +12,30 @@ header .container, main .container, footer .container{
 }
 header{
 	background: white;
+	overflow: auto;
+}
+header h1{
+	
+}
+header nav{
+	
 }
 main{
 	background-color: white;
+	overflow: auto;
 }
+header .leftColumn, main .leftColumn, footer .leftColumn{
+	float: left;
+	width: 570px;
+}
+main img{
+	
+}
+footer{
+	overflow: auto;
+}
+.rightColumn{
+	float: right;
+	width: 285px;
+}
+
