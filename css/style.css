@@ -9,6 +9,8 @@ header, main, footer{
 
 }
 header .container, main .container, footer .container{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
 	max-width: 855px;
 	margin: auto;
 }
@@ -48,10 +50,6 @@ main li{
 	list-style-type: circle;
 	list-style-position: inside;
 }
-header .leftColumn, main .leftColumn, footer .leftColumn{
-	float: left;
-	width: 570px;
-}
 
 footer{
 	overflow: auto;
@@ -64,10 +62,6 @@ footer h5+p{
 }
 footer ul{
 	columns: 2;
-}
-.rightColumn{
-	float: right;
-	width: 285px;
 }
 
 h1, h2, h3, h5{
