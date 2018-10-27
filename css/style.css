@@ -3,22 +3,18 @@ body{
 	font-family: 'Arsenal', sans-serif;
 	font-size: 100%;
 	line-height: 1.1rem;
+	max-width: 855px;
+	margin: 0 auto;
 }
-header, main, footer{
-	min-width: 855px;
 
-}
-header .container, main .container, footer .container{
+header, main, footer{
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	max-width: 855px;
-	margin: auto;
 }
 header{
 	background: white;
 	overflow: auto;
 	border-bottom: 2px solid gray;
-	height: 76px;
 }
 header h1{
 	font-size: 4rem;
@@ -50,10 +46,6 @@ main li{
 	list-style-type: circle;
 	list-style-position: inside;
 }
-
-footer{
-	overflow: auto;
-}
 footer h5{
 	margin: 25px auto;
 }
@@ -63,7 +55,6 @@ footer h5+p{
 footer ul{
 	columns: 2;
 }
-
 h1, h2, h3, h5{
 	font-family: 'Oswald', sans-serif;
 }
