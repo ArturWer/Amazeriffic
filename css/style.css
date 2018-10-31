@@ -75,4 +75,5 @@ a:hover{
 }
 .tabs a span.active {
 background: #eee;
+border: 2px solid green;
 }
