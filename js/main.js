@@ -33,6 +33,12 @@ function showContent(id){
 		btnElement.appendChild(btnText);
 		divContent.appendChild(inputElement);
 		divContent.appendChild(btnElement);
+		btnElement.addEventListener("click", function(){
+			if (inputElement.value !=="") {
+				toDos.push(inputElement.value);
+				inputElement.value = "";
+			}
+		}, false);
 	}
 	divContent.appendChild(ulElement);
 };
