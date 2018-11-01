@@ -15,16 +15,25 @@ function removeAllClassesActive(){
 		element.removeAttribute("class", "active");
 	});
 };
-function showContent(){
+function showContent(id){
 	let ulElement = document.createElement("ul"),
 		divContent = document.querySelector(".content");
-	toDos.forEach(function(element){
-		let liElement = document.createElement("li"),
-			newText = document.createTextNode(element);
-		liElement.appendChild(newText);
-		ulElement.appendChild(liElement);
-	});
+	if (id === "newTasks") {
+		toDos.forEach(function(element){
+			createLiAndAdd(element, ulElement);
+		});
+	} else if (id === "oldTasks") {
+		for (let i = toDos.length - 1; i >= 0; i--) {
+			createLiAndAdd(toDos[i], ulElement);
+		};
+	};	
 	divContent.appendChild(ulElement);
+};
+function createLiAndAdd(text, ulElement){
+	let liElement = document.createElement("li"),
+		newText = document.createTextNode(text);
+	liElement.appendChild(newText);
+	ulElement.appendChild(liElement);
 };
 
 for (var i = els.length - 1; i >= 0; i--) {
@@ -39,6 +48,6 @@ for (var i = els.length - 1; i >= 0; i--) {
 		content.forEach(function(element){
 			element.textContent = "";
 		});
-		showContent();
+		showContent(id);
 	}, false);
 };
