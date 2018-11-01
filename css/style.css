@@ -42,11 +42,13 @@ main p{
 	line-height: 1.5rem;
 }
 main li{
-	list-style-type: circle;
+	list-style-type: square;
 	list-style-position: inside;
+	line-height: 1.5em;
 }
 .content{
 	padding: 20px;
+	background: #eee;
 }
 main .content input{
 	width: 340px;
@@ -88,6 +90,9 @@ a:hover{
 	padding: 5px;
 }
 .tabs a span.active {
-background: #eee;
-border: 2px solid green;
+	background: #eee;
+	border: 2px solid #eee;
+	font-size: 1.1rem;
+	color: green;
+	text-shadow: 1px 1px 3px silver;
 }
