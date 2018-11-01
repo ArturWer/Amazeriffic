@@ -27,6 +27,7 @@ header nav{
 main{
 	background-color: white;
 	padding-top: 20px; 
+	height: 250px;
 }
 main h2{
 	font-size: 2rem;
@@ -43,6 +44,12 @@ main p{
 main li{
 	list-style-type: circle;
 	list-style-position: inside;
+}
+.content{
+	padding: 20px;
+}
+main .content input{
+	width: 300px;
 }
 footer h5{
 	margin: 25px auto;

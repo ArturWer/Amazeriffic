@@ -18,15 +18,18 @@ function removeAllClassesActive(){
 function showContent(id){
 	let ulElement = document.createElement("ul"),
 		divContent = document.querySelector(".content");
-	if (id === "newTasks") {
+	if (id === "oldTasks") {
 		toDos.forEach(function(element){
 			createLiAndAdd(element, ulElement);
 		});
-	} else if (id === "oldTasks") {
+	} else if (id === "newTasks") {
 		for (let i = toDos.length - 1; i >= 0; i--) {
 			createLiAndAdd(toDos[i], ulElement);
-		};
-	};	
+		}
+	} else if (id === "addTasks") {
+		let newInput = document.createElement("input");
+		divContent.appendChild(newInput);
+	}
 	divContent.appendChild(ulElement);
 };
 function createLiAndAdd(text, ulElement){
@@ -50,4 +53,4 @@ for (var i = els.length - 1; i >= 0; i--) {
 		});
 		showContent(id);
 	}, false);
-};
+}
