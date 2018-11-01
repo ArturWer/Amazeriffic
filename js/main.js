@@ -27,8 +27,12 @@ function showContent(id){
 			createLiAndAdd(toDos[i], ulElement);
 		}
 	} else if (id === "addTasks") {
-		let newInput = document.createElement("input");
-		divContent.appendChild(newInput);
+		let inputElement = document.createElement("input"),
+			btnElement = document.createElement("button"),
+			btnText = document.createTextNode("Add task");
+		btnElement.appendChild(btnText);
+		divContent.appendChild(inputElement);
+		divContent.appendChild(btnElement);
 	}
 	divContent.appendChild(ulElement);
 };
