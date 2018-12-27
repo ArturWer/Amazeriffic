@@ -21,9 +21,42 @@ function showContent(id){
 			createLiAndAdd(toDos[i].description, ulElement);
 		}
 	} else if (id === "tags") {
-		for (let i = toDos.length - 1; i >= 0; i--) {
-			createLiAndAdd(toDos[i].description, ulElement);
-		}
+		let organizedByTag = [
+			{
+			"name": "покупки",
+			"toDos": ["Купить продукты"]
+			},
+			{
+			"name": "рутина",
+			"toDos": ["Купить продукты", "Вывести Грейси на прогулку в парк"]
+			},
+			{
+			"name": "писательство",
+			"toDos": ["Сделать несколько новых задач", "Закончить писать книгу"]
+			},
+			{
+			"name": "работа",
+			"toDos": ["Сделать несколько новых задач", "Подготовиться к лекции в понедельник","Ответить на электронные письма", "Закончить писать книгу"]
+			},
+			{
+			"name": "преподавание",
+			"toDos": ["Подготовиться к лекции в понедельник"]
+			},
+			{
+			"name": "питомцы",
+			"toDos": ["Вывести Грейси на прогулку в парк "]
+			}
+		];
+		organizedByTag.forEach(function(tagEl){
+			let header = document.createElement("h3");
+			header.textContent = tagEl.name.toUpperCase();
+			divContent.appendChild(header);
+			tagEl.toDos.forEach(function(task){
+				let li = document.createElement("li");
+				li.textContent = task;
+				divContent.appendChild(li);
+			});
+		});
 	} else if (id === "addTasks") {
 		let inputElement = document.createElement("input"),
 			btnElement = document.createElement("button"),
