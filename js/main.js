@@ -20,6 +20,10 @@ function showContent(id){
 		for (let i = toDos.length - 1; i >= 0; i--) {
 			createLiAndAdd(toDos[i].description, ulElement);
 		}
+	} else if (id === "tags") {
+		for (let i = toDos.length - 1; i >= 0; i--) {
+			createLiAndAdd(toDos[i].description, ulElement);
+		}
 	} else if (id === "addTasks") {
 		let inputElement = document.createElement("input"),
 			btnElement = document.createElement("button"),
