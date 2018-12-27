@@ -27,7 +27,7 @@ header nav{
 main{
 	background-color: white;
 	padding-top: 20px; 
-	height: 250px;
+	min-height: 250px;
 }
 main h2{
 	font-size: 2rem;

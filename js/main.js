@@ -1,6 +1,7 @@
 "use strict";
 
 let els = document.querySelectorAll(".tabs a span");
+let url = "../json/todos.json";
 var toDos = [
 	"Закончить писать эту книгу",
 	"Вывести Грейси на прогулку в парк",
@@ -49,6 +50,13 @@ function createLiAndAdd(text, ulElement){
 	ulElement.appendChild(liElement);
 };
 
+let request = new XMLHttpRequest();
+request.open("GET", url);
+request.responseType = "json";
+request.send();
+request.onload = function(){
+	console.log(request.response);
+};
 for (var i = els.length - 1; i >= 0; i--) {
 	els[i].addEventListener("click", function (e) {
 		e.preventDefault();
