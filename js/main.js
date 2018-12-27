@@ -2,14 +2,7 @@
 
 let els = document.querySelectorAll(".tabs a span");
 let url = "../json/todos.json";
-var toDos = [
-	"Закончить писать эту книгу",
-	"Вывести Грейси на прогулку в парк",
-	"Ответить на электронные письма",
-	"Подготовиться к лекции в понедельник",
-	"Обновить несколько новых задач",
-	"Купить продукты"
-];
+let toDos = [];
 
 function removeAllClassesActive(){
 	els.forEach(function(element){
@@ -21,11 +14,11 @@ function showContent(id){
 		divContent = document.querySelector(".content");
 	if (id === "oldTasks") {
 		toDos.forEach(function(element){
-			createLiAndAdd(element, ulElement);
+			createLiAndAdd(element.description, ulElement);
 		});
 	} else if (id === "newTasks") {
 		for (let i = toDos.length - 1; i >= 0; i--) {
-			createLiAndAdd(toDos[i], ulElement);
+			createLiAndAdd(toDos[i].description, ulElement);
 		}
 	} else if (id === "addTasks") {
 		let inputElement = document.createElement("input"),
@@ -36,7 +29,7 @@ function showContent(id){
 		divContent.appendChild(btnElement);
 		btnElement.addEventListener("click", function(){
 			if (inputElement.value !=="") {
-				toDos.push(inputElement.value);
+				toDos.push({description: inputElement.value});
 				inputElement.value = "";
 			}
 		}, false);
@@ -55,7 +48,7 @@ request.open("GET", url);
 request.responseType = "json";
 request.send();
 request.onload = function(){
-	console.log(request.response);
+	toDos = request.response;
 };
 for (var i = els.length - 1; i >= 0; i--) {
 	els[i].addEventListener("click", function (e) {
