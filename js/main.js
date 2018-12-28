@@ -3,6 +3,7 @@
 let els = document.querySelectorAll(".tabs a span");
 let url = "../json/todos.json";
 let toDosJSON = [];
+let toDos = null;
 
 function removeAllClassesActive(){
 	els.forEach(function(element){
@@ -19,11 +20,16 @@ function orginizeByTag(jsonObject){
 	console.log(reformattedJSONArray);
 	return reformattedJSONArray;
 };
+function checkToDos() {
+	if(!toDos)
+		toDos = toDosJSON.map(obj=>{return obj;})
+}
 function showContent(id){
 	let ulElement = document.createElement("ul"),
 		divContent = document.querySelector(".content");
+	checkToDos();
 	if (id === "oldTasks") {
-		toDosJSON.forEach(function(element){
+		toDos.forEach(function(element){
 			createLiAndAdd(element.description, ulElement);
 		});
 	} else if (id === "newTasks") {
