@@ -2,7 +2,7 @@
 
 let els = document.querySelectorAll(".tabs a span");
 let url = "../json/todos.json";
-let toDos = [];
+let toDosJSON = [];
 
 function removeAllClassesActive(){
 	els.forEach(function(element){
@@ -23,7 +23,7 @@ function showContent(id){
 	let ulElement = document.createElement("ul"),
 		divContent = document.querySelector(".content");
 	if (id === "oldTasks") {
-		toDos.forEach(function(element){
+		toDosJSON.forEach(function(element){
 			createLiAndAdd(element.description, ulElement);
 		});
 	} else if (id === "newTasks") {
@@ -72,7 +72,7 @@ request.open("GET", url);
 request.responseType = "json";
 request.send();
 request.onload = function(){
-	toDos = request.response;
+	toDosJSON = request.response;
 };
 for (var i = els.length - 1; i >= 0; i--) {
 	els[i].addEventListener("click", function (e) {
