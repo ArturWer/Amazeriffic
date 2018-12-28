@@ -9,6 +9,16 @@ function removeAllClassesActive(){
 		element.removeAttribute("class", "active");
 	});
 };
+function orginizeByTag(jsonObject){
+	let reformattedJSONArray = jsonObject.map(obj=>{
+		let newObj = {};
+		newObj.name = obj.tags;
+		newObj.toDos = obj.description;
+		return newObj;
+	});
+	console.log(reformattedJSONArray);
+	return reformattedJSONArray;
+};
 function showContent(id){
 	let ulElement = document.createElement("ul"),
 		divContent = document.querySelector(".content");
@@ -21,32 +31,9 @@ function showContent(id){
 			createLiAndAdd(toDos[i].description, ulElement);
 		}
 	} else if (id === "tags") {
-		let organizedByTag = [
-			{
-			"name": "покупки",
-			"toDos": ["Купить продукты"]
-			},
-			{
-			"name": "рутина",
-			"toDos": ["Купить продукты", "Вывести Грейси на прогулку в парк"]
-			},
-			{
-			"name": "писательство",
-			"toDos": ["Сделать несколько новых задач", "Закончить писать книгу"]
-			},
-			{
-			"name": "работа",
-			"toDos": ["Сделать несколько новых задач", "Подготовиться к лекции в понедельник","Ответить на электронные письма", "Закончить писать книгу"]
-			},
-			{
-			"name": "преподавание",
-			"toDos": ["Подготовиться к лекции в понедельник"]
-			},
-			{
-			"name": "питомцы",
-			"toDos": ["Вывести Грейси на прогулку в парк "]
-			}
-		];
+		console.log(`toDos: ${toDos}`);
+		let organizedByTag = orginizeByTag(toDos);
+		console.log(`organizedByTag: ${organizedByTag}`);
 		organizedByTag.forEach(function(tagEl){
 			let header = document.createElement("h3");
 			header.textContent = tagEl.name.toUpperCase();
