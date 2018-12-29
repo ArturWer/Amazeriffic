@@ -11,14 +11,21 @@ function removeAllClassesActive(){
 	});
 };
 function orginizeByTag(jsonObject){
-	let reformattedJSONArray = jsonObject.map(obj=>{
-		let newObj = {};
-		newObj.name = obj.tags;
-		newObj.toDos = obj.description;
-		return newObj;
+	let newTagsArray = [];
+	let reformattedArray = jsonObject.map(objJSON=>{
+		objJSON.tags.forEach(tags=>{
+			let checkTag = newTagsArray.indexOf("name");
+			newTagsArray.forEach(obj=>{
+				/* check if tag is new or old */
+				console.log(tags);
+				console.log(obj.name);
+			});
+			console.log(checkTag);
+			if (checkTag === -1) newTagsArray.push({"name":tags, "toDos":objJSON.description});
+		});	
 	});
-	console.log(reformattedJSONArray);
-	return reformattedJSONArray;
+	console.log(newTagsArray);
+	return reformattedArray;
 };
 function checkToDos() {
 	if(!toDos)
@@ -37,7 +44,6 @@ function showContent(id){
 			createLiAndAdd(toDos[i].description, ulElement);
 		}
 	} else if (id === "tags") {
-		console.log(`toDos: ${toDos}`);
 		let organizedByTag = orginizeByTag(toDos);
 		console.log(`organizedByTag: ${organizedByTag}`);
 		organizedByTag.forEach(function(tagEl){
