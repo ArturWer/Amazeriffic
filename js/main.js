@@ -12,15 +12,6 @@ function removeAllClassesActive(){
 };
 function orginizeByTag(jsonObject){
 	let newTagsArray = [];
-				/*
-				newTagsArray.forEach(obj=>{
-					console.log(tags);
-					console.log(obj.name);
-					if (tags === obj.name){
-						console.log("tags are the same");
-					} else newTagsArray.push({"name":tags, "toDos":objJSON.description}); 
-				});*/
-
 	jsonObject.forEach(obj=>{
 		obj.tags.forEach(tags=>{
 			if (newTagsArray.length > 0) {
@@ -34,6 +25,20 @@ function orginizeByTag(jsonObject){
 		});	
 	}); 
 	console.log(newTagsArray);
+	/* find all tasks for each tag*/
+	let tasksArr = newTagsArray.map(tag=>{
+		console.log(tag);
+		console.log(jsonObject);
+		let toDos = [];
+		jsonObject.forEach(obj=>{
+			let isTask = obj.tags.indexOf(tag);
+			if( isTask > -1){
+				toDos.push(obj.description);
+			};
+		});
+		return {"name":tag, "toDos": toDos};
+	});
+	console.log(tasksArr);
 };
 function checkToDos() {
 	if(!toDos)
