@@ -71,11 +71,19 @@ function showContent(id){
 			});
 		});
 	} else if (id === "addTasks") {
-		let inputElement = document.createElement("input"),
+		let pTaskName = document.createElement("p"),
+			inputElement = document.createElement("input"),
+			pTagsName = document.createElement("p"),
+			inputTagElement = document.createElement("input"),
 			btnElement = document.createElement("button"),
 			btnText = document.createTextNode("Add task");
+		pTaskName.textContent = "Описание";
+		pTagsName.textContent = "Теги";
 		btnElement.appendChild(btnText);
+		divContent.appendChild(pTaskName);
 		divContent.appendChild(inputElement);
+		divContent.appendChild(pTagsName);
+		divContent.appendChild(inputTagElement);
 		divContent.appendChild(btnElement);
 		btnElement.addEventListener("click", function(){
 			if (inputElement.value !=="") {
