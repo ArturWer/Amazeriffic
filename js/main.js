@@ -12,20 +12,28 @@ function removeAllClassesActive(){
 };
 function orginizeByTag(jsonObject){
 	let newTagsArray = [];
-	let reformattedArray = jsonObject.map(objJSON=>{
-		objJSON.tags.forEach(tags=>{
-			let checkTag = newTagsArray.indexOf("name");
-			newTagsArray.forEach(obj=>{
-				/* check if tag is new or old */
-				console.log(tags);
-				console.log(obj.name);
-			});
-			console.log(checkTag);
-			if (checkTag === -1) newTagsArray.push({"name":tags, "toDos":objJSON.description});
+				/*
+				newTagsArray.forEach(obj=>{
+					console.log(tags);
+					console.log(obj.name);
+					if (tags === obj.name){
+						console.log("tags are the same");
+					} else newTagsArray.push({"name":tags, "toDos":objJSON.description}); 
+				});*/
+
+	jsonObject.forEach(obj=>{
+		obj.tags.forEach(tags=>{
+			if (newTagsArray.length > 0) {
+				let isTag = newTagsArray.indexOf(tags);
+				if (isTag === -1) {
+					newTagsArray.push(tags);
+				}
+			} else {
+				newTagsArray.push(tags);
+			}
 		});	
-	});
+	}); 
 	console.log(newTagsArray);
-	return reformattedArray;
 };
 function checkToDos() {
 	if(!toDos)
