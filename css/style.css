@@ -71,6 +71,11 @@ main .content h3{
 main .content li{
 	margin: 1rem;
 }
+main .content p{
+	margin: 0;
+	padding: 0;
+	line-height: 1.3rem;
+}
 footer h5{
 	margin: 25px auto;
 }
@@ -107,3 +112,4 @@ a:hover{
 	color: green;
 	text-shadow: 1px 1px 3px silver;
 }
+

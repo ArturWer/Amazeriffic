@@ -87,8 +87,12 @@ function showContent(id){
 		divContent.appendChild(btnElement);
 		btnElement.addEventListener("click", function(){
 			if (inputElement.value !=="") {
-				toDos.push({description: inputElement.value});
+				let tags = inputTagElement.value;
+				tags = tags.split(',');
+				console.log(tags);
+				toDos.push({description: inputElement.value, "tags": tags});
 				inputElement.value = "";
+				inputTagElement.value = "";
 			}
 		}, false);
 	}
