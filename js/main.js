@@ -39,6 +39,7 @@ function orginizeByTag(jsonObject){
 		return {"name":tag, "toDos": toDos};
 	});
 	console.log(tasksArr);
+	return tasksArr;
 };
 function checkToDos() {
 	if(!toDos)
